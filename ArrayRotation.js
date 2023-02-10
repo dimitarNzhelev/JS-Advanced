@@ -32,4 +32,4 @@ function rotation(array, number) {
   console.log(array);
 }
 
-rotation([1, 2, 3, 4, 5, 6], 3);
+rotation([295, 618, 319, -125, 4006], 3);

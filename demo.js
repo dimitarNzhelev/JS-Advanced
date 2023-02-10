@@ -19,4 +19,4 @@ function login(input) {
   }
 }
 
-login(["Acer", "login", "let me in", "go", "recA"]);
+login(["Acer", "password", "go inside", "go", "recA"]);

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Movie List | DOM Events</h1>
+    <ul id="'movie-list">
+      <li>Outer Banks</li>
+      <li>The Last of Us</li>
+      <li>Marvel</li>
+      <li>Avangers</li>
+    </ul>
+  </body>
+
+  <script>
+    let movieElement = document.querySelectorAll("ul li");
+    movieElement.forEach((element) => {
+      element.addEventListener("click", (e) => {
+        if (e.currentTarget.style.textDecoration == "line-through") {
+          e.currentTarget.style.textDecoration = "none";
+        } else {
+          e.currentTarget.style.textDecoration = "line-through";
+        }
+      });
+    });
+  </script>
+</html>

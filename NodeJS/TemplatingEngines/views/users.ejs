@@ -1,0 +1,17 @@
+<%- include('./templates/head'); %>
+<body>
+    <% if (users.length > 0) { %>
+        <h1>Users</h1>
+    <ul>
+        <% users.forEach((user) => { %>
+            <li>
+                <p><%= user %></p>
+            </li>
+         <%});%>
+    </ul>
+    <% } else { %>
+        <h1>You are dumbo</h1>
+        <% }; %>
+</body>
+</html>
+

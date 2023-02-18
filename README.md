@@ -1,2 +1,2 @@
-# SoftUni-JS-Advanced
-My journey through the entire SoftUni JS Advanced Course. 
+# JS
+My journey learning JavaScript.

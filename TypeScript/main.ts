@@ -1,11 +1,25 @@
-const button = document.getElementById('button');
-const input1 = document.getElementById('input1')! as HTMLInputElement;
-const input2 = document.getElementById('input2')! as HTMLInputElement;
-
-function add(num1: number, num2:number) {
-    return num1 + num2;
+import axios from 'axios';
+const form = document.querySelector('form')! as HTMLFormElement;
+const addressInput = document.getElementById('address')! as HTMLInputElement;
+const url = ''
+type GoogleAPI = {
+    results: {geometry: {location: {lat: number; lng: number} } } [];
+    status: 'OK' | 'ZERO RESULTS';
+}
+const API_Key = 'ASDghgerfnadswAfsdaAW' //this is not valid API key
+function searchAddressHandler(event:Event){
+    event.preventDefault();
+    const enteredAddress = addressInput.value;
+    axios.get(`https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURI(enteredAddress)}&key=${API_Key}`)
+    .then(response => {
+        if(response.data.status != 'OK'){
+            throw new Error('Could not fetch location!');
+        }
+        const coordinates = response.data.result[0].geometry.location;
+    })
+    .catch(err => console.log(err));
 }
 
-button?.addEventListener('click', ()=> {
-    console.log(add(+input1.value, +input2.value));
-})
+form.addEventListener('submit', searchAddressHandler);
+
+//not finished yet
